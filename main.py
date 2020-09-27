@@ -56,7 +56,8 @@ class ThreadedVideo():
     
     def return_frame(self):
         self.frame=cv2.resize(self.frame,(848,480), fx=0, fy=0, interpolation=cv2.INTER_CUBIC)
-        return self.frame
+        self.frame, alert =self.detect(self, self.frame)
+        return self.frame, alert
 
     def detect(self,frame):
 
